@@ -35,9 +35,10 @@
 					</select>
 			</div>
 
+			
 			<div class="form-group" id="nop" >	 
 					<label for="inputEmail"  ><?php echo $this->lang->line('nop');?></label> 
-					<input type="text"   name="nop"  class="form-control" value="4"   >
+					<input id="nop1" type="text" onchange="myFunction(this.value)"   name="nop"  class="form-control" value="4"   >
 			</div>
 
 
@@ -59,3 +60,23 @@
 
 
 </div>
+
+
+<script type="text/javascript">
+
+
+    
+	$( document ).ready(function() {
+	var nop = localStorage.getItem('nop');
+	//alert(nop);
+	document.getElementById("nop1").value=nop;
+	
+});
+function myFunction(x) {
+ 
+    localStorage.setItem('nop', x);
+}
+	
+
+</script>
+
